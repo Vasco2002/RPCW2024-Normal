@@ -1,0 +1,309 @@
+@prefix : <http://www.semanticweb.org/vasco/ontologies/2024/4/historia/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/vasco/ontologies/2024/4/historia/> .
+
+<http://www.semanticweb.org/vasco/ontologies/2024/4/historia> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#alimenta
+:alimenta rdf:type owl:ObjectProperty ;
+          owl:inverseOf :alimentado ;
+          rdfs:domain :Trabalhador ;
+          rdfs:range :Animal .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#alimentado
+:alimentado rdf:type owl:ObjectProperty ;
+            rdfs:domain :Animal ;
+            rdfs:range :Trabalhador .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#colhe
+:colhe rdf:type owl:ObjectProperty ;
+       owl:inverseOf :colhido ;
+       rdfs:domain :Trabalhador ;
+       rdfs:range :Alimento .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#colhido
+:colhido rdf:type owl:ObjectProperty ;
+         rdfs:domain :Alimento ;
+         rdfs:range :Trabalhador .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#contrata
+:contrata rdf:type owl:ObjectProperty ;
+          owl:inverseOf :contratado ;
+          rdfs:domain :Trabalhador ;
+          rdfs:range :Temporário .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#contratado
+:contratado rdf:type owl:ObjectProperty ;
+            rdfs:domain :Temporário ;
+            rdfs:range :Trabalhador .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#contém
+:contém rdf:type owl:ObjectProperty ;
+        owl:inverseOf :encontra-se ;
+        rdfs:domain :Fazenda ;
+        rdfs:range :Animal .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#encontra-se
+:encontra-se rdf:type owl:ObjectProperty ;
+             rdfs:domain :Animal ;
+             rdfs:range :Fazenda .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#faz_geleia
+:faz_geleia rdf:type owl:ObjectProperty ;
+            rdfs:domain :Trabalhador ;
+            rdfs:range :Fruta .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#pertence
+:pertence rdf:type owl:ObjectProperty ;
+          owl:inverseOf :possui ;
+          rdfs:domain :Fazenda ;
+          rdfs:range :Trabalhador .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#planta
+:planta rdf:type owl:ObjectProperty ;
+        owl:inverseOf :plantado ;
+        rdfs:domain :Trabalhador ;
+        rdfs:range :Alimento .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#plantado
+:plantado rdf:type owl:ObjectProperty ;
+          rdfs:domain :Alimento ;
+          rdfs:range :Trabalhador .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#possui
+:possui rdf:type owl:ObjectProperty ;
+        rdfs:domain :Trabalhador ;
+        rdfs:range :Fazenda .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#protege
+:protege rdf:type owl:ObjectProperty ;
+         rdfs:domain :Animal ;
+         rdfs:range :Fazenda .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#alimento
+:alimento rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Alimento ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#animal
+:animal rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Animal ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#id_alimento
+:id_alimento rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Alimento ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#id_animal
+:id_animal rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Animal ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#id_fazenda
+:id_fazenda rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Fazenda ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#id_trabalhador
+:id_trabalhador rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Trabalhador ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Trabalhador ;
+      rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#Alimento
+:Alimento rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#Animal
+:Animal rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#Fazenda
+:Fazenda rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#Fruta
+:Fruta rdf:type owl:Class ;
+       rdfs:subClassOf :Alimento ;
+       owl:disjointWith :Vegetal .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#Temporário
+:Temporário rdf:type owl:Class ;
+            rdfs:subClassOf :Trabalhador .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#Trabalhador
+:Trabalhador rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#Vegetal
+:Vegetal rdf:type owl:Class ;
+         rdfs:subClassOf :Alimento .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#al1
+:al1 rdf:type owl:NamedIndividual ,
+              :Fruta ;
+     :colhido :t2 ;
+     :plantado :t1 ;
+     :alimento "maçã" ;
+     :id_alimento "al1" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#al2
+:al2 rdf:type owl:NamedIndividual ,
+              :Fruta ;
+     :colhido :t3 ;
+     :plantado :t6 ;
+     :alimento "laranja" ;
+     :id_alimento "al2" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#al3
+:al3 rdf:type owl:NamedIndividual ,
+              :Vegetal ;
+     :colhido :t5 ;
+     :plantado :t5 ;
+     :alimento "tomate" ;
+     :id_alimento "al3" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#an1
+:an1 rdf:type owl:NamedIndividual ,
+              :Animal ;
+     :alimentado :t1 ;
+     :encontra-se :f1 ;
+     :protege :f1 ;
+     :animal "cão" ;
+     :id_animal "an1" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#an2
+:an2 rdf:type owl:NamedIndividual ,
+              :Animal ;
+     :alimentado :t4 ;
+     :encontra-se :f1 ;
+     :animal "porco" ;
+     :id_animal "an2" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#f1
+:f1 rdf:type owl:NamedIndividual ,
+             :Fazenda ;
+    :contém :an1 ,
+            :an2 ;
+    :pertence :t1 ;
+    :id_fazenda "f1" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#f2
+:f2 rdf:type owl:NamedIndividual ,
+             :Fazenda ;
+    :pertence :t5 ;
+    :id_fazenda "f2" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#t1
+:t1 rdf:type owl:NamedIndividual ,
+             :Trabalhador ;
+    :alimenta :an1 ;
+    :contrata :t6 ;
+    :planta :al1 ;
+    :possui :f1 ;
+    :id_trabalhador "t1" ;
+    :nome "Sr. João" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#t2
+:t2 rdf:type owl:NamedIndividual ,
+             :Trabalhador ;
+    :colhe :al1 ;
+    :faz_geleia :al1 ;
+    :id_trabalhador "t2" ;
+    :nome "Sra. Maria" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#t3
+:t3 rdf:type owl:NamedIndividual ,
+             :Trabalhador ;
+    :colhe :al2 ;
+    :faz_geleia :al2 ;
+    :id_trabalhador "t3" ;
+    :nome "Ana" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#t4
+:t4 rdf:type owl:NamedIndividual ,
+             :Trabalhador ;
+    :alimenta :an2 ;
+    :id_trabalhador "t4" ;
+    :nome "Pedro" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#t5
+:t5 rdf:type owl:NamedIndividual ,
+             :Trabalhador ;
+    :colhe :al3 ;
+    :planta :al3 ;
+    :possui :f2 ;
+    :id_trabalhador "t5" ;
+    :nome "Sr. Carlos" .
+
+
+###  http://www.semanticweb.org/vasco/ontologies/2024/4/historia#t6
+:t6 rdf:type owl:NamedIndividual ,
+             :Temporário ;
+    :contratado :t1 ;
+    :planta :al2 ;
+    :id_trabalhador "t6" ;
+    :nome "Jorge" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

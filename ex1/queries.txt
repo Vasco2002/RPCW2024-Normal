@@ -1,0 +1,54 @@
+1. Quantas classes estão definidas na Ontologia?
+
+PREFIX : <http://www.semanticweb.org/vasco/ontologies/2024/4/historia/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select (COUNT(?class) AS ?classCount) where {
+  ?class a owl:Class .
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Quantas Object Properties estão definidas na Ontologia?
+
+PREFIX : <http://www.semanticweb.org/vasco/ontologies/2024/4/historia/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select (COUNT(?property) AS ?propertyCount) where {
+  ?property a owl:ObjectProperty .
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Quantos indivíduos existem na tua ontologia?
+
+PREFIX : <http://www.semanticweb.org/vasco/ontologies/2024/4/historia/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select (COUNT(?individual) AS ?individualCount) where {
+  ?individual a owl:NamedIndividual .
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Quem planta tomates?
+
+select ?workerName where {
+  ?worker rdf:type :Trabalhador ;
+          :planta ?tomato .
+  ?tomato rdf:type :Alimento ;
+          :alimento "tomate" .
+  ?worker :nome ?workerName .
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Quem contrata trabalhadores temporários?
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://www.semanticweb.org/vasco/ontologies/2024/4/historia/>
+select ?employerName where {
+  ?employer rdf:type :Trabalhador ;
+            :contrata ?temporaryWorker .
+  ?temporaryWorker rdf:type :Temporário .
+  ?employer :nome ?employerName .
+}
